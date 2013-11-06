@@ -1,0 +1,32 @@
+/**
+ * manifest
+ * 配置清单 浏览器根据此文件识别扩展
+ * @author fedeoo <tragedymi[at]163.com>
+ * @version 1.0
+ */
+{
+    "manifest_version": 2,
+
+    "name": "Crazy Style",
+    "description": "该扩展定义了一些样式，还有一些效果。即将添加更多节日效果。关于图标，脑海想到‘缓缓飘落的枫叶像思念’，就用枫叶了。如果有好的想法，欢迎反馈到邮箱：tragedymi@163.com。",
+    "version": "1.0",
+    "icons": {
+        "48": "leaf48.png"
+    },
+    "permissions": ["tabs", "http://*/*", "https://*/*", "file:///*/*"],
+    "browser_action": {
+        "default_icon": "leaf48.png",
+        "default_popup": "index.html"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*", "file:///*/*"],
+            "js": ["contentscript.js"]
+        }
+    ],
+    "web_accessible_resources": ["css/qindeoo.css", "css/april-fools.css", "css/nightsky.css", "modulejs/nightsky.js"],
+    "options_page": "options.html"
+}

@@ -1,0 +1,51 @@
+body {
+    min-width: 150px;
+    font-family: 'Microsoft YaHei' 'SimHei';
+    background: #fefefe;
+    font-size: 14px;
+    max-height: 200px;
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-pills > li > a {
+    border-radius: 0 !important;
+}
+
+.nav-pills > li {
+    min-width: 150px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-pills > li > a {
+    color: #333;
+}
+
+.nav-pills > li > a.disabled {
+    color: #ccc;
+}
+
+.enable, .foolsBtn{
+    cursor: pointer;
+}
+.enable img {
+    display: none;
+}
+.enable.active img{
+    display: inline;
+}
+
+p {
+    margin: 0px;
+}
+
+.foolsBtn img {
+    display: none;
+}
+.foolsBtn.active img{
+    display: inline;
+}

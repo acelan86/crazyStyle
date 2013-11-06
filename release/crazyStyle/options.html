@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>crazyStyle配置页</title>
+    <link rel="stylesheet" type="text/css" href="css/qindeoo.css">
+    <style type="text/css">
+    input{
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.428571429;
+    }
+    label{
+        display: inline-block;
+        width: 120px;
+        text-align: right;
+        padding: 0 20px;
+    }
+    input[type="text"]{
+        width: 400px;
+    }
+    td {
+        text-align: center;
+    }
+       
+    </style>
+</head>
+<body>
+<div style="margin: 0 auto; width: 900px; margin-top: 80px;">
+    <div>
+        说明：该配置往匹配URL的页面插入js、css文件
+        示例：<br>
+        效果名称：test<br>
+        匹配URL：taobao.com<br>
+        引入脚本URL：http://fedeoo.github.io/accumulation/javascripts/ctt.js<br>
+        点击添加效果，并保存<br>
+    </div>
+    <table style="margin: 20px 0px; width: 100%;" id="list">
+    </table>
+    <form id="form">
+        <fieldset name="效果选项" style="border: 1px dotted; border-radius: 6px;">
+            <div>
+                <label>效果名称：</label><input type="text" name="name" placeholder="请输入英文"/>
+            </div>
+            <div>
+                <label>匹配URL：</label><input type="text" name="match" placeholder="匹配包含该字符串的URL"/>
+            </div>
+            <div>
+                <label>引入样式URL：</label><input type="text" name="styleURL" placeholder="请输入http开头的合法路径"/>
+            </div>
+            <div>
+                <label>引入脚本URL：</label><input type="text" name="jsURL" placeholder="请输入http开头的合法路径"/>
+            </div>
+            <div style="margin-top: 10px;">
+                <input type="button" id="addEffect" value="添加新效果" style="margin-left: 140px;"/>
+                <input type="button" id="save" value="保存" style="margin-left: 20px;">
+            </div>
+        </fieldset>
+    </form>
+<div>
+<script type="text/javascript" src="options.js"></script>
+</body>
+</html>

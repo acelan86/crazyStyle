@@ -1,0 +1,72 @@
+/**
+ * @description 主要美化样式
+ * @author fedeoo
+ */
+ 
+* {
+    font-family: Consolas,"Courier New",'SimHei' !important;
+    /*color: red !important;*/
+}
+h1,h2,h3{
+    font-family: 'Microsoft YaHei';
+}
+
+code, kbd, pre, samp {
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}
+
+tr:nth-child(even){
+    background-color:#f9f9f9;
+}
+table{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    background-color: white;
+}
+ 
+table> tr > th, table > * > tr > th{
+    font-weight: normal;
+    background-color: #0088cc;
+    color: white;
+}
+table > tr > th, table > tr > td, table > * > tr > th, table > * > tr > td{
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+input[type="text"], input[type="email"] , input[type="password"], textarea{
+    border: 1px solid #ccc !important;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus{
+    border-color: #66afe9 !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+} 
+
+button, input[type="button"], input[type="reset"], input[type="submit"]{
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+button:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus{
+    background-color: #ebebeb;
+    border-color: #adadad;
+}
+
+
+/** fix 主要页面 样式 */
+/*google 输入框*/
+input#gbqfq {
+    border: none !important;
+    box-shadow:none;
+    -webkit-box-shadow: none;
+}
