@@ -19,6 +19,9 @@
             removeOption(event.target.getAttribute('data-name'));
         }
     };
+    /**
+     * [displayTable 显示表格并绑定事件]
+     */
     function displayTable () {
         options = options || [];
         var contents = [];
@@ -40,7 +43,12 @@
         //     }
         // }
     }
-
+    /**
+     * [format 简单的模板替换处理]
+     * @param  {[String]} source [模板字符串]
+     * @param  {[Object]} data   [模板需要变量]
+     * @return {[String]}        [替换后的字符串]
+     */
     function format (source, data) {
         return source.replace(/#\{(.+?)\}/g, function (match, key){
             return data[key] || '';
@@ -53,12 +61,18 @@
         options = bkg.settings.options;
         displayTable();
     }
-
+    /**
+     * [addOption 添加配置项]
+     * @param {[Object]} newOption [配置对象]
+     */
     function addOption (newOption) {
         options.push(newOption);
         displayTable();
     }
-
+    /**
+     * [removeOption 移除配置项]
+     * @param  {[String]} name [配置项名称]
+     */
     function removeOption (name) {
         for (var i = options.length - 1; i >= 0; i--) {
             if (options[i].name == name) {
