@@ -38,8 +38,20 @@ var utilCPU = {
         this.turnon();
         chrome.tabs.onCreated.addListener(this._getTabCreatedHandler());
         chrome.tabs.onUpdated.addListener(this._getTabUpdateHandler());
+        this.getRemoteData();
     },
 
+    getRemoteData: function () {
+        var xhr = new XMLHttpRequest();
+        var url = 'http://www.baidu.com';
+        xhr.open('GET', url);
+        xhr.send(null);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                console.log(xhr.responseText);
+            }
+        }
+    },
     /**
      * [reloadContentScript 当重新载入扩展时，之前打开页面不存在contentScript，需要重新载入]
      */
@@ -101,6 +113,7 @@ var utilCPU = {
      * [_getTabUpdateHandler 页面URL变化都会触发update]
      */
     _getTabUpdateHandler: function () {
+        var me = this;
         /**
          * [更新页签的绑定处理函数]
          * @param  {[Tab]} tab [页签对象]
@@ -116,7 +129,7 @@ var utilCPU = {
                     });
                 }
             }
-            if (this.options.enable === true) {
+            if (me.options.enable === true) {
                 // chrome.tabs.executeScript(tabId, { file: "contentscript.js" }, function () {
                 // });
                 chrome.tabs.sendMessage(tabId, {type: 'system', cmd:{globalStyle: 'enable'}}, function (response) {
